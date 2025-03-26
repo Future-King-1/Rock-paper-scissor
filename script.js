@@ -3,12 +3,10 @@ function getComputerChoice(){
     let choices=["ROCK","PAPER","SCISSOR"]
     return choices[Math.floor(Math.random() * choices.length)]
 }
-console.log(getComputerChoice())
 function getHumanChoice(){
     let choice = prompt("ROCK,PAPER OR SCISSOR!!!")
     return choice
 }
-console.log(getHumanChoice())
 let humanScore = 0
 let computerScore = 0
 function playRound(humanChoice,computerChoice){
@@ -40,9 +38,23 @@ function playRound(humanChoice,computerChoice){
         console.log("Draw");
     }
 }
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame(){
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+}
+playGame()
+playGame()
+playGame()
+playGame()
+playGame()
 
-playRound(humanSelection, computerSelection);
-console.log(humanScore)
-console.log(computerScore)
+console.log("your score: "+ humanScore)
+console.log("computer score: "+ computerScore)
+if(humanScore>computerScore){
+    console.log("you won")
+}else if(computerScore>humanScore){
+    console.log("you lose")
+}else{
+    console.log("Final score Draw")
+}
